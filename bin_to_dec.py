@@ -1,6 +1,6 @@
 import re
 
-def __validate(input: str):
+def validate_binary(input: str):
     if (not re.findall(r'\d{1,8}[0, 1]+', input)) or len(input) > 8:
         if 1 > len(input) > 8:
             specifics = 'Invalid input length'
@@ -12,8 +12,8 @@ def __validate(input: str):
         return False
     return True
 
-def convert(input: str):
-    if not __validate():
+def convert_bin_to_dec(input: str):
+    if not validate_binary():
         return None
     total = 0
     current = 1
