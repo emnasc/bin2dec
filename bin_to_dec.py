@@ -2,11 +2,9 @@ import re
 import sys
 
 def validate_binary(input: str):
-    if (not re.findall(r'\d{1,8}[0, 1]+', input)) or len(input) > 8:
+    if (not re.findall(r'[0, 1]+', input)):
         if not input.isnumeric():
             specifics = 'Input is not numeric'
-        elif (1 > len(input) or len(input) > 8):
-            specifics = 'Invalid input length'
         else:
             specifics = 'Input is not binary'
         print(f'Invalid input {input}: {specifics}')
