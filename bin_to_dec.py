@@ -1,4 +1,5 @@
 import re
+import sys
 
 def validate_binary(input: str):
     if (not re.findall(r'\d{1,8}[0, 1]+', input)) or len(input) > 8:
@@ -22,3 +23,9 @@ def convert_bin_to_dec(input: str):
             total += current
         current *= 2
     return total
+
+if __name__ == '__main__':
+    for input in sys.argv[1:]:
+        result = convert_bin_to_dec(input)
+        if result:
+            print(result)
