@@ -1,2 +1,3 @@
 .pytest_cache
 .idea
+./test/__pycache__/
